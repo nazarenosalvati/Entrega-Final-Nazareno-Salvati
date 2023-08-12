@@ -40,22 +40,19 @@
                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav ml-auto">
                      <li class="nav-item">
-                        <a class="nav-link" href="inicio">Home</a>
+                        <a class="nav-link" href="{% url 'inicio' %}">Home</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="about">About</a>
+                        <a class="nav-link" href="{% url 'buscar_sucursales' %}">Sucursales</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="cafe">Cafe</a>
+                        <a class="nav-link" href="{% url 'cafe' %}">Cafe</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="shop.html">Shop</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="blog">Blog</a>
+                        <a class="nav-link" href="{% url 'blog' %}">Blog</a>
                      </li>
                      <li class="nav-item active">
-                        <a class="nav-link" href="contacto">Contacto</a>
+                        <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
                      </li>
                   </ul>
                   <form class="form-inline my-2 my-lg-0">
@@ -76,7 +73,7 @@
          <div class="container">
             <div class="row">
                <div class="col-sm-12">
-                  <h1 class="contact_taital">Get In Touch</h1>
+                  <h1 class="contact_taital">Contactanos!</h1>
                   <div class="bulit_icon"><img src="{% static 'images/bulit-icon.png' %}"></div>
                </div>
             </div>
@@ -90,7 +87,15 @@
                         <input type="text" class="mail_text" placeholder="Your Email" name="Your Email">
                         <input type="text" class="mail_text" placeholder="Your Phone" name="Your Phone">
                         <textarea class="massage-bt" placeholder="Massage" rows="5" id="comment" name="Massage"></textarea>
-                        <div class="send_bt"><a href="#">SEND</a></div>
+                        <div class="send_bt"><a href="#" id="enviarBtn">ENVIAR</a></div>
+                        <div id="mensajeEnviado" style="display: none;">Mensaje enviado con éxito</div>
+                        
+                        <script>
+                            document.getElementById("enviarBtn").addEventListener("click", function(event) {
+                                event.preventDefault();
+                                document.getElementById("mensajeEnviado").style.display = "block";
+                            });
+                        </script>
                      </div>
                   </div>
                   <div class="map_main">
@@ -126,8 +131,15 @@
                   </div>
                   <div class="form-group">
                      <textarea class="update_mail" placeholder="Your Email" rows="5" id="comment" name="Your Email"></textarea>
-                     <div class="subscribe_bt"><a href="#"><img src="{% static 'images/teligram-icon.png' %}"></a></div>
-                  </div>
+                     <div class="subscribe_bt"><a href="#" id="suscribirBtn"><img src="{% static 'images/teligram-icon.png' %}"></a></div>
+                 </div>
+                 <div id="mensajeSuscripcion" style="display: none; color: white; text-align: center; margin-top: 10px;">¡Te has suscrito correctamente al newsletter!</div>
+                 <script>
+                  document.getElementById("suscribirBtn").addEventListener("click", function(event) {
+                      event.preventDefault();
+                      document.getElementById("mensajeSuscripcion").style.display = "block";
+                  });
+              </script>
                </div>
             </div>
          </div>

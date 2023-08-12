@@ -29,6 +29,7 @@ class PedidoForm(forms.ModelForm):
     cliente_direccion = forms.CharField(label='Direccion', widget=forms.TextInput(attrs={'placeholder': 'Ingrese la dirección del cliente'}))
     cliente_zona = forms.CharField(label='Zona', widget=forms.TextInput(attrs={'placeholder': 'Ingrese la zona del cliente'}))
     cliente_telefono = forms.CharField(label='Telefono', widget=forms.TextInput(attrs={'placeholder': 'Ingrese el teléfono del cliente'}))
+    productos = forms.ModelMultipleChoiceField(queryset=Producto.objects.all(), widget=forms.Select())
 
 
 class BusquedaForm(forms.Form):

@@ -44,6 +44,9 @@ class Producto(models.Model):
 class Pedido(models.Model):
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
     fecha_pedido = models.DateTimeField(auto_now_add=True)
+    direccion = models.CharField(max_length=100, default='')  
+    zona = models.CharField(max_length=100, default='')  
+    telefono = models.CharField(max_length=20, default='')  
     productos = models.ManyToManyField(Producto)
     
 

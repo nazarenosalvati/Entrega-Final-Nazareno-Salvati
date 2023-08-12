@@ -1,0 +1,32 @@
+{% extends 'miaplicacion/index.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <h1>Listado de Pedidos</h1>
+    <ul>
+        {% for pedido in pedidos %}
+            <li>
+                Cliente: {{ pedido.cliente }}
+                Fecha de Pedido: {{ pedido.fecha_pedido }}
+                Dirección: {{ pedido.cliente.direccion }}
+                Zona: {{ pedido.cliente.zona }}
+                Teléfono: {{ pedido.cliente.telefono }}
+                Productos:
+                <ul>
+                    {% for producto in pedido.productos.all %}
+                        <li>{{ producto.nombre }} - {{ producto.descripcion }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+{% endblock contenido %}

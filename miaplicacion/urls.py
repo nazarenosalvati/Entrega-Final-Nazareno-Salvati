@@ -16,7 +16,7 @@ urlpatterns = [
     path('crear_sucursal/', crear_sucursal, name='crear_sucursal'),
 
     path('lista_sucursales/', lista_sucursales, name='lista_sucursales'),
-
+    path('lista_pedidos/', lista_pedidos, name='lista_pedidos'),
     path('buscar_sucursales/', buscar_sucursales, name='buscar_sucursales'),
 
 ]
