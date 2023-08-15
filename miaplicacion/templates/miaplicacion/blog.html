@@ -1,6 +1,11 @@
+{% extends 'miaplicacion/index.html' %}
+{% load static %}
+
+
 <!DOCTYPE html>
 <html>
    <head>
+      {% block blog1 %} 
       {% load static %}
       <!-- basic -->
       <meta charset="utf-8">
@@ -29,44 +34,10 @@
       <!-- Tweaks for older IEs-->
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
    </head>
+   {% endblock blog1 %} 
+   {% block blog2 %} 
    <body>
-      <div class="header_section header_bg">
-         <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-               <a class="navbar-brand"href="inicio"><img src="{% static 'images/logo.png' %}"></a>
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav ml-auto">
-                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'inicio' %}">Home</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'buscar_sucursales' %}">Sucursales</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'cafe' %}">Cafe</a>
-                     </li>
-                     <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'blog' %}">Blog</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
-                     </li>
-                  </ul>
-                  <form class="form-inline my-2 my-lg-0">
-                     <div class="login_bt">
-                        <ul>
-                           <li><a href="#"><span class="user_icon"><i class="fa fa-user" aria-hidden="true"></i></span>Login</a></li>
-                           <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                        </ul>
-                     </div>
-                  </form>
-               </div>
-            </nav>
-         </div>
-      </div>
+      
       <!-- header section end -->
       <!-- blog section start -->
       <div class="blog_section layout_padding">
@@ -95,7 +66,7 @@
                         <h4 class="prep_text">Trabajo y café</h4>
                         <p class="lorem_text">Para muchos de nosotros, el café y el trabajo son inseparables compañeros de vida. Esa taza humeante se convierte en nuestra aliada fiel mientras enfrentamos las demandas del día a día. El café es nuestro aliado secreto para mantenernos enfocados y motivados. En este post, descubriremos por qué beber café mientras trabajamos puede ser la combinación perfecta para aumentar nuestra productividad y mantener nuestra creatividad en su punto más alto. ¡Así que toma tu taza favorita y acompáñanos en esta travesía cafeinada!</p>
                      </div>
-                     <div class="read_bt"><a href="#">Leer post</a></div>
+                     <div class="read_bt mb-4"><a href="#">Leer post</a></div>
                   </div>
                </div>
             </div>
@@ -103,64 +74,5 @@
       </div>
       <!-- blog section end -->
       <!-- footer section start -->
-      <div class="footer_section layout_padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <h1 class="address_text">Ubicación</h1>
-                  <p class="footer_text">Para parecer mas facheros decimos que estamos en la torre Eiffel, pero podes encontrarnos en Corrientes 3453, CABA.</p>
-                  <div class="location_text">
-                     <ul>
-                        <li>
-                           <a href="#">
-                              <i class="fa fa-phone" aria-hidden="true"></i><span class="padding_left_10">+54 11 2345 7890</span>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#">
-                           <i class="fa fa-envelope" aria-hidden="true"></i><span class="padding_left_10">Codercafe@cafecito.com</span>
-                           </a>
-                        </li>
-                     </ul>
-                  </div>
-                  <div class="form-group">
-                     <textarea class="update_mail" placeholder="Your Email" rows="5" id="comment" name="Your Email"></textarea>
-                     <div class="subscribe_bt"><a href="#"><img src="{% static 'images/teligram-icon.png' %}"></a></div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- footer section end -->
-      <!-- copyright section start -->
-      <div class="copyright_section">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-6 col-sm-12">
-                  <p class="copyright_text">2023 All Rights Reserved. Design by <a href="https://www.linkedin.com/in/nazareno-salvati-6b1584218?originalSubdomain=ar">Nazareno Salvati</a></p>
-               </div>
-               <div class="col-lg-6 col-sm-12">
-                  <div class="footer_social_icon">
-                     <ul>
-                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- copyright section end -->
-      <!-- Javascript files-->
-      <script src="{% static 'js/jquery.min.js' %}"></script>
-      <script src="{% static 'js/popper.min.js' %}"></script>
-      <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-      <script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
-      <script src="{% static 'js/plugin.js' %}"></script>
-      <!-- sidebar -->
-      <script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
-      <script src="{% static 'js/custom.js' %}"></script>
-   </body>
+      {% endblock blog2 %} 
 </html>

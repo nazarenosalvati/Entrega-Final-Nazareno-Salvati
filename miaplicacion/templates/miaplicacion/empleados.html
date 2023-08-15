@@ -1,0 +1,25 @@
+{% extends 'miaplicacion/index.html' %}
+{% load static %}
+{% block barra %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 class="mt-4">Empleado: {{ user.username|upper }}</h1>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12 text-center">
+                <div class="btn-group" role="group" aria-label="Opciones">
+                    <a href="{% url 'crear_cafe' %}" class="btn btn-light btn-lg">Crear Café</a>
+                    <a href="{% url 'crear_producto' %}" class="btn btn-warning btn-lg">Crear Producto</a>
+                    <a href="{% url 'crear_pedido' %}" class="btn btn-danger btn-lg">Crear Pedido</a>
+                    <a href="{% url 'crear_sucursal' %}" class="btn btn-info btn-lg">Crear Sucursal</a>
+                    <a href="{% url 'crear_cliente' %}" class="btn btn-dark btn-lg">Crear Cliente</a>
+                    <a href="{% url 'lista_pedidos' %}" class="btn btn-success btn-lg">Lista de Pedidos</a>
+                    <a href="{% url 'lista_sucursales' %}" class="btn btn-primary btn-lg">Lista de Sucursales</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock barra %}
+

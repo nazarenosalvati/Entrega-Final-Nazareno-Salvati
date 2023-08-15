@@ -1,5 +1,6 @@
 from django.urls import path, include
 from .views import *
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path('', index, name="inicio" ),
@@ -18,5 +19,16 @@ urlpatterns = [
     path('lista_sucursales/', lista_sucursales, name='lista_sucursales'),
     path('lista_pedidos/', lista_pedidos, name='lista_pedidos'),
     path('buscar_sucursales/', buscar_sucursales, name='buscar_sucursales'),
+    
+    path('login/', login_request, name="login"),
+    path('logout/', LogoutView.as_view(template_name="miaplicacion/logout.html"), name="logout"),
+    path('register/', register, name="register"),
 
+    path('editar_perfil/', editarPerfil, name="editar_perfil"),
+    path('agregar_avatar/', agregarAvatar, name="agregar_avatar"),
+    path('perfil/', perfil, name="perfil"),
+
+    path('empleados/', empleados, name="empleados"),
+  
+  
 ]

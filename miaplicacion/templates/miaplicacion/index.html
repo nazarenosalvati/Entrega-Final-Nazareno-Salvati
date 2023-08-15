@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+   {% block blog1 %}
    <head>
       {% load static %}
       <!-- basic -->
@@ -29,45 +30,17 @@
       <!-- Tweaks for older IEs-->
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
    </head>
+   {% endblock blog1 %}
    <body>
       <div class="header_section">
-         <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-               <a class="navbar-brand"href="inicio"><img src="{% static 'images/logo.png' %}"></a>
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav ml-auto">
-                     <li class="nav-item {% if current_page == 'inicio' %}active{% endif %}">
-                        <a class="nav-link" href="{% url 'inicio' %}">Home</a>
-                     </li>
-                     <li class="nav-item{% if current_page == 'buscar_sucursales' %}active{% endif %}">
-                        <a class="nav-link" href="{% url 'buscar_sucursales' %}">Sucursales</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'cafe' %}">Cafe</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'blog' %}">Blog</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
-                     </li>
-                  </ul>
-                  <form class="form-inline my-2 my-lg-0">
-                     <div class="login_bt">
-                        <ul>
-                           <li><a href="#"><span class="user_icon"><i class="fa fa-user" aria-hidden="true"></i></span>Login</a></li>
-                           <li><a href="{% url 'buscar_sucursales' %}"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                        </ul>
-                     </div>
-                  </form>
-               </div>
-            </nav>
-         </div>
-         <!-- banner section start --> 
+         {% include 'miaplicacion/navbar.html' %}
+         {% block barra %}
+         {% block blog2 %} 
+         {% block cafe %}
          {% block todo %}  
+          
+         <!-- banner section start --> 
+         
          <div class="banner_section layout_padding">
             <div class="container">
                <div id="banner_slider" class="carousel slide" data-ride="carousel">
@@ -265,8 +238,8 @@
                <div class="image_iman"><img src="{% static 'images/about-img.png' %}" class="about_img"></div>
                <div class="about_taital_box">
                   <h1 class="about_taital_1">Nacidos para aprobar</h1>
-                  <p class=" about_text">Coder Cafe nació como respuesta a una actividad del curso de CoderHouse, donde decidimos crear la mejor cafetería de America y que nos aprueben la tercera entrega.</p>
-                  <div class="readmore_btn"><a href="#">Mas info</a></div>
+                  <p class=" about_text">Coder Cafe nació como respuesta a una actividad del curso de CoderHouse, donde decidimos crear la mejor cafetería de America y que nos aprueben el proyecto final.</p>
+                  <div class="readmore_btn"><a href="{% url 'about' %}">Mas info</a></div>
                </div>
             </div>
          </div>
@@ -331,7 +304,7 @@
                         <h4 class="prep_text">Tips para un mejor café</h4>
                         <p class="lorem_text">¿Listo para elevar tu café al siguiente nivel? En este post, te traemos los mejores consejos para preparar la taza perfecta y convertirte en un barista experto. Desde la selección de los granos hasta los secretos de preparación, descubre cómo disfrutar de un café excepcional en cada sorbo. ¡Tu mañana nunca volverá a ser la misma!</p>
                      </div>
-                     <div class="read_bt"><a href="#">Leer post</a></div>
+                     <div class="read_bt"><a href="{% url 'blog' %}">Leer post</a></div>
                   </div>
                   <div class="col-md-6">
                      <div class="blog_box">
@@ -340,9 +313,10 @@
                         <h4 class="prep_text">Trabajo y café</h4>
                         <p class="lorem_text">Para muchos de nosotros, el café y el trabajo son inseparables compañeros de vida. Esa taza humeante se convierte en nuestra aliada fiel mientras enfrentamos las demandas del día a día. El café es nuestro aliado secreto para mantenernos enfocados y motivados. En este post, descubriremos por qué beber café mientras trabajamos puede ser la combinación perfecta para aumentar nuestra productividad y mantener nuestra creatividad en su punto más alto. ¡Así que toma tu taza favorita y acompáñanos en esta travesía cafeinada!</p>
                      </div>
-                     <div class="read_bt"><a href="#">Leer post</a></div>
+                     <div class="read_bt"><a href="{% url 'blog' %}">Leer post</a></div>
                      {% endblock contenido %}
                      {% endblock todo %}  
+                     {% endblock cafe %}
                   </div>
                </div>
             </div>
@@ -383,6 +357,7 @@
       </div>
       <!-- contact section end -->
       <!-- footer section start -->
+      {% endblock blog2 %} 
       <div class="footer_section layout_padding">
          <div class="container">
             <div class="row">
@@ -413,6 +388,7 @@
       </div>
       <!-- footer section end -->
       <!-- copyright section start -->
+      {% endblock barra %}
       <div class="copyright_section">
          <div class="container">
             <div class="row">

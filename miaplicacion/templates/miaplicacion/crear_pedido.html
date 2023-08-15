@@ -1,6 +1,8 @@
 {% extends 'miaplicacion/index.html' %}
-{% block contenido %}
-    <h1>Crear Pedido</h1>
+{% block barra %}
+
+<div class="container">
+    <h1 class="text-center">Crear Pedido</h1>
     {% if messages %}
         <ul class="messages">
             {% for message in messages %}
@@ -10,26 +12,34 @@
     {% endif %}
     <form method="post">
         {% csrf_token %}
-        <div class="form-group">
+        <div class="form-group text-right">
             <label for="{{ form.cliente_nombre.id_for_label }}">Nombre:</label>
             {{ form.cliente_nombre }}
         </div>
-        <div class="form-group">
+        <div class="form-group text-right">
             <label for="{{ form.cliente_direccion.id_for_label }}">Dirección:</label>
             {{ form.cliente_direccion }}
         </div>
-        <div class="form-group">
+        <div class="form-group text-right">
             <label for="{{ form.cliente_zona.id_for_label }}">Zona:</label>
             {{ form.cliente_zona }}
         </div>
-        <div class="form-group">
+        <div class="form-group text-right">
             <label for="{{ form.cliente_telefono.id_for_label }}">Teléfono:</label>
             {{ form.cliente_telefono }}
         </div>
-        <div class="form-group">
+        <div class="form-group text-right">
             <label for="{{ form.productos.id_for_label }}">Producto:</label>
             {{ form.productos }}
         </div>
-        <button type="submit">Crear Pedido</button>
+        <div class="text-center mt-3 mb-4">
+            <button type="submit" class="btn btn-lg btn-primary">Crear Pedido</button>
+        </div>
     </form>
-{% endblock contenido %}
+</div>
+
+
+
+
+
+    {% endblock barra %}

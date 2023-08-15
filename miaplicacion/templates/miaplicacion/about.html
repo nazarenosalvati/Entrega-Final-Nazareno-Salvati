@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
    <head>
@@ -32,61 +33,62 @@
    <body>
       <div class="header_section header_bg">
          <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-               <a class="navbar-brand"href="inicio"><img src="{% static 'images/logo.png' %}"></a>
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav ml-auto">
-                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'inicio' %}">Home</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'buscar_sucursales' %}">Sucursales</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'cafe' %}">Cafe</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'blog' %}">Blog</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
-                     </li>
-                  </ul>
-                  <form class="form-inline my-2 my-lg-0">
-                     <div class="login_bt">
-                        <ul>
-                           <li><a href="#"><span class="user_icon"><i class="fa fa-user" aria-hidden="true"></i></span>Login</a></li>
-                           <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                        </ul>
-                     </div>
-                  </form>
-               </div>
-            </nav>
+            {% include 'miaplicacion/navbar.html' %}
          </div>
       </div>
       <!-- header section end -->
       <!-- about section start -->
-      <div class="about_section layout_padding">
+      <div class="about_section layout_padding" style="margin-bottom: 20px;">
          <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <h1 class="about_taital">Sobre Coder Cafe</h1>
-                  <div class="bulit_icon"><img src="{% static 'images/bulit-icon.png' %}"></div>
-               </div>
-            </div>
-            <div class="about_section_2 layout_padding">
-               <div class="image_iman"><img src="{% static 'images/about-img.png' %}" class="about_img"></div>
-               <div class="about_taital_box">
-                  <h1 class="about_taital_1">Nacidos para aprobar</h1>
-                  <p class=" about_text">Coder Cafe nació como respuesta a una actividad del curso de CoderHouse, donde decidimos crear la mejor cafetería de America y que nos aprueben la tercera entrega.</p>
-                  <div class="readmore_btn"><a href="#">Mas info</a></div>
-               </div>
-            </div>
+             <div class="row">
+                 <div class="col-md-12 text-center">
+                     <h1 class="about_taital">Sobre Coder Cafe</h1>
+                     <div class="bulit_icon"><img src="{% static 'images/bulit-icon.png' %}" alt="Icono"></div>
+                 </div>
+             </div>
+             <div class="row">
+                 <div class="col-md-6">
+                     <div class="about_section_2 layout_padding">
+                         <div class="image_iman"><img src="{% static 'images/about-img.png' %}" class="about_img" alt="Imagen de Café"></div>
+                     </div>
+                 </div>
+                 <div class="col-md-6">
+                     <div class="about_text">
+                         <h2>Bienvenido a Coder Cafe</h2>
+                         <p>Coder Cafe es un lugar donde la pasión por el café se une con la creatividad y la tecnología. Nuestro objetivo es proporcionar un ambiente acogedor y relajado donde los amantes del café y la programación puedan conectarse y colaborar.</p>
+                         <p>Con una variedad de bebidas exquisitas y un ambiente inspirador, Coder Cafe es el lugar perfecto para reunirse, trabajar en proyectos y disfrutar de momentos especiales.</p>
+                     </div>
+                 </div>
+             </div>
          </div>
-      </div>
+     </div>
+     <div class="about_section layout_padding">
+         <div class="container">
+             <div class="row">
+                 <div class="col-md-12 text-center">
+                     <h1 class="about_taital" style="margin-bottom: 20px;">Sobre Su Creador</h1>
+                     <div class="bulit_icon"><img src="{% static 'images/bulit-icon.png' %}" alt="Icono"></div>
+                 </div>
+             </div>
+             <div class="row">
+                 <div class="col-md-6">
+                     <div class="about_section_2 layout_padding">
+                         <div class="image_iman"><img src="{% static 'images/Brad-Pitt-img.png' %}" class="about_img" alt="Imagen de Brad Pitt"></div>
+                     </div>
+                 </div>
+                 <div class="col-md-6">
+                     <div class="about_text">
+                         <h2>NAZARENO SALVATI</h2>
+                         <p>Edad: 26 años</p>
+                         <p>Ocupación: Analista</p>
+                         <p>Comisión: 43865</p>
+                         <p>Nota Final: 10 (TOP 10)</p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+     
       <!-- about section end -->
       <!-- footer section start -->
       <div class="footer_section layout_padding">

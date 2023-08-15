@@ -1,10 +1,14 @@
+{% extends 'miaplicacion/index.html' %}
+{% load static %}
+{% block barra %}
+
 <!DOCTYPE html>
 <html>
 <head>
     
 </head>
 <body>
-    <h1>Registrarte como Cliente</h1>
+    <h1>Registrarte Cliente</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
@@ -12,3 +16,5 @@
     </form>
 </body>
 </html>
+
+{% endblock barra %}
